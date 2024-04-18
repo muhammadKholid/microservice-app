@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres-cms
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: mcs-admin-db
+      POSTGRES_PASSWORD: nest-react-pass
+      POSTGRES_DB: nest-microservice
+    networks:
+      - cms_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:6.18
+    container_name: pgadmin-cms
+    ports:
+      - '8081:80'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    networks:
+      - cms_network
+    volumes:
+      - /data/pgadmin:/root/.pgadmin
+
+networks:
+  cms_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

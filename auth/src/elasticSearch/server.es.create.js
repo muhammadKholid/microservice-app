@@ -6,7 +6,7 @@ import { client } from './server.client.js';
 
 (async function () {
     try {
-        const index = 'products'
+        const index = 'product-index'
         const type = 'category'
 
         if (await client.indices.exists({ index })) {
