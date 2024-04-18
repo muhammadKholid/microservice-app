@@ -83,7 +83,7 @@ const Mutation = new GraphQLObjectType({
             },
         },
 
-        // Mutation to update a user by ID
+        // Mutation to update a Product by ID
         updateProduct: {
             type: ProductType,
             args: {
@@ -101,8 +101,8 @@ const Mutation = new GraphQLObjectType({
             },
         },
 
-        // Mutation to delete a user by ID
-        deleteUser: {
+        // Mutation to delete a product by ID
+        deleteProduct: {
             type: ProductType,
             args: { id: { type: GraphQLNonNull(GraphQLString) } },
             resolve: async (_, args) => {

@@ -1,6 +1,6 @@
 # What is this?
 
-    This repo is aimed to learn microservice application with different technology. The application is still immature hence please do not expect too much. This project is only to learn about kafka and elasticsearch. 
+     This project is aimed only to learn about kafka and elasticsearch. The application is still immature hence please do not expect too much. 
 
 ## Technology required
 
@@ -33,12 +33,85 @@
 
 ### Auth
 
-    Go to 'http://localhost:{YOUR_PORT}/graphql'
+    '''
+mutation SignupUser($input: SignUpInput!) {
+  signupUser(input: $input) {
+    status
+    user {
+      email
+      id
+      name
+      createdAt
+      role
+    }
+  }
+}
+    '''
+
+    variable
+    '''
+{
+  "input": {
+    "email": "almasfikri0@gmail.com",
+    "name": "fikri",
+    "password": "fikri123",
+    "passwordConfirm": "fikri123"
+  }
+}
+    '''
 
 ### Order
 
-    Go to 'http://localhost:{YOUR_PORT}/api'
+    This service is not using graphql. I use swagger so I don't need to document the api in this file. Please go to 'http://localhost:3000/api'
 
 ### Product
 
-    Go to 'http://localhost:{YOUR_PORT}/graphql'
+    '''
+query {
+  products{
+    id
+    name
+    description
+  }
+}
+
+query Product ($id: String!) {
+  product(id: $id){
+    id
+    name
+    description
+  }
+}
+
+mutation CreateProduct ($name: String!, $desc: String!, $status: Boolean!) {
+  addProduct(name: $name, description:$desc, status:$status){
+    id
+    name
+    description
+  }
+}
+
+mutation UpdateProduct ($id: String!, $name: String!, $desc: String!, $status: Boolean!) {
+  updateProduct(id:$id, name: $name, description:$desc, status:$status){
+    id
+    name
+    description
+  }
+}
+
+mutation DeleteProduct ($id: String!) {
+  deleteProduct(id:$id){
+    id
+  }
+}
+    '''
+
+    variable
+    '''
+    {
+        "id": "662097469d83b791e0a3e9d8",
+        "name": "nama",
+        "desc": "nama benda",
+        "status": true
+    }
+    '''
