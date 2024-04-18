@@ -19,21 +19,21 @@
 
 ### Auth
 
-    Please make sure create '.env' file first. The variable is located in 'env-example' file. Then run 'npm run start'.
+    Please make sure create `.env` file first. The variable is located in `env-example` file. Then run `npm run start`.
 
 ### Order
 
-    Please make sure create '.env' file first. The variable is located in 'env-example' file. Then run 'npm run start:dev'.
+    Please make sure create `.env` file first. The variable is located in `env-example` file. Then run `npm run start:dev`.
 
 ### Product
 
-    Please make sure create '.env' file first. The variable is located in 'env-example' file. Then run 'npm run start'.
+    Please make sure create `.env` file first. The variable is located in `env-example` file. Then run `npm run start`.
 
 ## How to test each service?
 
 ### Auth
 
-    '''
+    ```
 mutation SignupUser($input: SignUpInput!) {
   signupUser(input: $input) {
     status
@@ -46,10 +46,10 @@ mutation SignupUser($input: SignUpInput!) {
     }
   }
 }
-    '''
+    ```
 
     variable
-    '''
+    ```
 {
   "input": {
     "email": "almasfikri0@gmail.com",
@@ -58,15 +58,15 @@ mutation SignupUser($input: SignUpInput!) {
     "passwordConfirm": "fikri123"
   }
 }
-    '''
+    ```
 
 ### Order
 
-    This service is not using graphql. I use swagger so I don't need to document the api in this file. Please go to 'http://localhost:3000/api'
+    This service is not using graphql. I use swagger so I don't need to document the api in this file. Please go to `http://localhost:3000/api`
 
 ### Product
 
-    '''
+    ```
 query {
   products{
     id
@@ -104,14 +104,14 @@ mutation DeleteProduct ($id: String!) {
     id
   }
 }
-    '''
+    ```
 
     variable
-    '''
+    ```
     {
         "id": "662097469d83b791e0a3e9d8",
         "name": "nama",
         "desc": "nama benda",
         "status": true
     }
-    '''
+    ```
