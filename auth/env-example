@@ -1,0 +1,21 @@
+NODE_ENV=
+PORT=
+
+MONGODB_URI_LOCAL=
+
+MONGO_INITDB_ROOT_USERNAME=
+MONGO_INITDB_ROOT_PASSWORD=
+MONGO_INITDB_DATABASE=
+
+
+# To create private and public key, go to this website
+# https://travistidwell.com/jsencrypt/demo/
+# then encode into base64 with ascii in this website
+# https://www.base64encode.org/
+
+JWT_ACCESS_PRIVATE_KEY=
+JWT_ACCESS_PUBLIC_KEY=
+
+JWT_REFRESH_PRIVATE_KEY=
+JWT_REFRESH_PUBLIC_KEY=
+
