@@ -33,7 +33,7 @@
 
 ### Auth
 
-    ```
+```ruby
 mutation SignupUser($input: SignUpInput!) {
   signupUser(input: $input) {
     status
@@ -46,10 +46,10 @@ mutation SignupUser($input: SignUpInput!) {
     }
   }
 }
-    ```
+```
 
     variable
-    ```
+```ruby
 {
   "input": {
     "email": "almasfikri0@gmail.com",
@@ -58,7 +58,7 @@ mutation SignupUser($input: SignUpInput!) {
     "passwordConfirm": "fikri123"
   }
 }
-    ```
+```
 
 ### Order
 
@@ -66,7 +66,7 @@ mutation SignupUser($input: SignUpInput!) {
 
 ### Product
 
-    ```
+```ruby
 query {
   products{
     id
@@ -74,7 +74,6 @@ query {
     description
   }
 }
-
 query Product ($id: String!) {
   product(id: $id){
     id
@@ -82,7 +81,6 @@ query Product ($id: String!) {
     description
   }
 }
-
 mutation CreateProduct ($name: String!, $desc: String!, $status: Boolean!) {
   addProduct(name: $name, description:$desc, status:$status){
     id
@@ -90,7 +88,6 @@ mutation CreateProduct ($name: String!, $desc: String!, $status: Boolean!) {
     description
   }
 }
-
 mutation UpdateProduct ($id: String!, $name: String!, $desc: String!, $status: Boolean!) {
   updateProduct(id:$id, name: $name, description:$desc, status:$status){
     id
@@ -98,20 +95,20 @@ mutation UpdateProduct ($id: String!, $name: String!, $desc: String!, $status: B
     description
   }
 }
-
 mutation DeleteProduct ($id: String!) {
   deleteProduct(id:$id){
     id
   }
 }
-    ```
+```
 
     variable
-    ```
+
+```ruby
     {
         "id": "662097469d83b791e0a3e9d8",
         "name": "nama",
         "desc": "nama benda",
         "status": true
     }
-    ```
+```
